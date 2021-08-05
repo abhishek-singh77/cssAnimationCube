@@ -1,0 +1,208 @@
+#heading {
+    max-width: 750px;
+    margin: 4rem auto;
+    padding: .6rem;
+  }
+section{
+    max-width: 750px;
+    margin: 4rem auto;
+    padding: 15rem;
+}
+
+.wrapper {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+  .intDiv {
+    --marginVar: 2vmin;
+    --delayVar: -30ms;
+    position: absolute;
+    width: 30vmin;
+    height: 30vmin;
+    left: calc(50% - 15vmin);
+    top: calc(50% - 15vmin);
+    background-color: red;
+    animation: rotateMe 2000ms ease-in-out infinite,
+      colorMe 6000ms linear infinite;
+    border-radius: 3vmin;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2) inset;
+  }
+  #linearRadio:checked ~ .wrapper .intDiv {
+    animation-timing-function: linear, linear;
+  }
+  #easeInRadio:checked ~ .wrapper .intDiv {
+    animation-timing-function: ease-in, linear;
+  }
+  #easeOutRadio:checked ~ .wrapper .intDiv {
+    animation-timing-function: ease-out, linear;
+  }
+  #cubicBezier:checked ~ .wrapper .intDiv {
+    animation-timing-function: cubic-bezier(1, 0, 0, 1), linear;
+  }
+  .first {
+    filter: brightness(200%);
+  }
+  .intDiv:nth-last-of-type(2) {
+    margin-top: calc(var(--marginVar) * 1);
+    animation-delay: calc(var(--delayVar) * 1);
+  }
+  .intDiv:nth-last-of-type(3) {
+    margin-top: calc(var(--marginVar) * 2);
+    animation-delay: calc(var(--delayVar) * 2);
+  }
+  .intDiv:nth-last-of-type(4) {
+    margin-top: calc(var(--marginVar) * 3);
+    animation-delay: calc(var(--delayVar) * 3);
+  }
+  .intDiv:nth-last-of-type(5) {
+    margin-top: calc(var(--marginVar) * 4);
+    animation-delay: calc(var(--delayVar) * 4);
+  }
+  .intDiv:nth-last-of-type(6) {
+    margin-top: calc(var(--marginVar) * 5);
+    animation-delay: calc(var(--delayVar) * 5);
+  }
+  .intDiv:nth-last-of-type(7) {
+    margin-top: calc(var(--marginVar) * 6);
+    animation-delay: calc(var(--delayVar) * 6);
+  }
+  .intDiv:nth-last-of-type(8) {
+    margin-top: calc(var(--marginVar) * 7);
+    animation-delay: calc(var(--delayVar) * 7);
+  }
+  .intDiv:nth-last-of-type(9) {
+    margin-top: calc(var(--marginVar) * 8);
+    animation-delay: calc(var(--delayVar) * 8);
+  }
+  .intDiv:nth-last-of-type(10) {
+    margin-top: calc(var(--marginVar) * 9);
+    animation-delay: calc(var(--delayVar) * 9);
+  }
+  .intDiv:nth-last-of-type(11) {
+    margin-top: calc(var(--marginVar) * 10);
+    animation-delay: calc(var(--delayVar) * 10);
+  }
+  .intDiv:nth-last-of-type(12) {
+    margin-top: calc(var(--marginVar) * 11);
+    animation-delay: calc(var(--delayVar) * 11);
+  }
+  .intDiv:nth-last-of-type(13) {
+    margin-top: calc(var(--marginVar) * 12);
+    animation-delay: calc(var(--delayVar) * 12);
+  }
+  .intDiv:nth-last-of-type(14) {
+    margin-top: calc(var(--marginVar) * 13);
+    animation-delay: calc(var(--delayVar) * 13);
+  }
+  .intDiv:nth-last-of-type(15) {
+    margin-top: calc(var(--marginVar) * 14);
+    animation-delay: calc(var(--delayVar) * 14);
+  }
+  .intDiv:nth-last-of-type(16) {
+    margin-top: calc(var(--marginVar) * 15);
+    animation-delay: calc(var(--delayVar) * 15);
+  }
+  body {
+    text-align: center;
+    font-family: sans-serif;
+    color: #555555;
+  }
+  #easeInRadio {
+    margin-top: 4rem;
+  }
+  #easeRadioMore {
+    margin-top: 2rem;
+  }
+  input,
+  label {
+    position: relative;
+    z-index: 9;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: opacity 200ms linear 0s;
+  }
+  input:checked + label {
+    color: #0375fd;
+  }
+  input {
+    margin-left: 32px;
+  }
+  #easeRadio,
+  #easeRadioMore {
+    margin-left: 0;
+  }
+  input[type="checkbox"],
+  input[type="checkbox"] + label {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate(-2rem, -2rem);
+    pointer-events: all !important;
+    opacity: 1 !important;
+  }
+  input[type="checkbox"] {
+    margin-right: 4.6rem;
+    margin-bottom: 0.2rem;
+  }
+  #compareCheck ~ input,
+  #compareCheck ~ label {
+    opacity: 0;
+    pointer-events: none;
+  }
+  #compareCheck:checked ~ input,
+  #compareCheck:checked ~ label {
+    opacity: 1;
+    pointer-events: all;
+  }
+  #compareCheck:checked ~ #linearRadioMore:checked ~ .wrapper .bottomStack {
+    animation-timing-function: linear, linear;
+  }
+  #compareCheck:checked ~ #easeRadioMore:checked ~ .wrapper .bottomStack {
+    animation-timing-function: ease-in-out, linear;
+  }
+  #compareCheck:checked ~ #easeInRadioMore:checked ~ .wrapper .bottomStack {
+    animation-timing-function: ease-in, linear;
+  }
+  #compareCheck:checked ~ #easeOutRadioMore:checked ~ .wrapper .bottomStack {
+    animation-timing-function: ease-out, linear;
+  }
+  #compareCheck:checked ~ #cubicBezierMore:checked ~ .wrapper .bottomStack {
+    animation-timing-function: cubic-bezier(1, 0, 0, 1), linear;
+  }
+  @media screen and (min-width: 600px) {
+    .removeMe {
+      display: none;
+    }
+  }
+  @keyframes rotateMe {
+    0% {
+      transform: rotateX(80deg) rotateZ(0);
+    }
+    100% {
+      transform: rotateX(80deg) rotateZ(360deg);
+    }
+  }
+  @keyframes colorMe {
+    0% {
+      background-color: red;
+    }
+    25% {
+      background-color: purple;
+    }
+    50% {
+      background-color: green;
+    }
+    75% {
+      background-color: blue;
+    }
+    100% {
+      background-color: red;
+    }
+  }
+  
